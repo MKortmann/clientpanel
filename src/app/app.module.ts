@@ -19,6 +19,13 @@ import { TranslateComponent } from './components/translate/translate.component';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 // our config file for ngx-translate bib
 import { CustomTranslateLoader } from 'src/customTranslateLoader';
+import { ChildDashboardComponent } from './components/child-dashboard/child-dashboard.component';
+
+// Add environment + firebase modules
+import { environment } from '../environments/environment';
+import { AngularFireModule } from '@angular/fire';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { AngularFireAuthModule } from '@angular/fire/auth';
 
 @NgModule({
   declarations: [
@@ -35,6 +42,7 @@ import { CustomTranslateLoader } from 'src/customTranslateLoader';
     SettingsComponent,
     NotFoundComponent,
     TranslateComponent,
+    ChildDashboardComponent,
   ],
   imports: [
     BrowserModule,
@@ -45,6 +53,9 @@ import { CustomTranslateLoader } from 'src/customTranslateLoader';
         useClass: CustomTranslateLoader,
       },
     }),
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFirestoreModule,
+    AngularFireAuthModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

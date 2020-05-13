@@ -24,6 +24,7 @@ export class CustomTranslateLoader implements TranslateLoader {
           observer.next(en);
           break;
       }
+      // Observer.complete notifies the observer that the observable has finished to sending push-based notifications. In the other hand, observer.complete it's a callback function and an Observable calls this method after it has called next() for the final time, if it has not encountered any errors.
       observer.complete();
     });
   }
