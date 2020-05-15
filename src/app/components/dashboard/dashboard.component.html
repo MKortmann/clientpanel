@@ -1,5 +1,8 @@
-<p>dashboard works!</p>
-<!-- passing the message variable of dashboard to the child -->
-<app-child-dashboard></app-child-dashboard>
-Message of parent: {{ message }}
-<app-clients></app-clients>
+<div class="row">
+  <div class="col-md-10">
+    <app-clients></app-clients>
+  </div>
+  <div class="col-md-2">
+    <app-sidebar></app-sidebar>
+  </div>
+</div>

@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
@@ -27,6 +28,9 @@ import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 
+// Import flash messages
+import { FlashMessagesModule } from 'angular2-flash-messages';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -46,6 +50,7 @@ import { AngularFireAuthModule } from '@angular/fire/auth';
   ],
   imports: [
     BrowserModule,
+    FormsModule,
     AppRoutingModule,
     TranslateModule.forRoot({
       loader: {
@@ -53,6 +58,7 @@ import { AngularFireAuthModule } from '@angular/fire/auth';
         useClass: CustomTranslateLoader,
       },
     }),
+    FlashMessagesModule.forRoot(),
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule,
     AngularFireAuthModule,
