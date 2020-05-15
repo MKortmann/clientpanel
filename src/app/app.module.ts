@@ -14,7 +14,6 @@ import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
 import { SettingsComponent } from './components/settings/settings.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
-import { AppRoutingModule } from './app-routing.module';
 import { TranslateComponent } from './components/translate/translate.component';
 // For ngx translation
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
@@ -30,6 +29,11 @@ import { AngularFireAuthModule } from '@angular/fire/auth';
 
 // Import flash messages
 import { FlashMessagesModule } from 'angular2-flash-messages';
+
+// Client Services
+import { AppRoutingModule } from './app-routing.module';
+import { ClientService } from './service/client.service';
+import { AuthService } from './service/auth.service';
 
 @NgModule({
   declarations: [
@@ -63,7 +67,7 @@ import { FlashMessagesModule } from 'angular2-flash-messages';
     AngularFirestoreModule,
     AngularFireAuthModule,
   ],
-  providers: [],
+  providers: [ClientService, AuthService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
