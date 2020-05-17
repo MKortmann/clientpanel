@@ -34,6 +34,7 @@ import { FlashMessagesModule } from 'angular2-flash-messages';
 import { AppRoutingModule } from './app-routing.module';
 import { ClientService } from './service/client.service';
 import { AuthService } from './service/auth.service';
+// import { SettingsService } from './service/settings.service';
 
 @NgModule({
   declarations: [
